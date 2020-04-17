@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my css</title>
+
+    <style type="text/css">
+        div{
+            width: 100px;
+			height: 100px;
+			background-color: #00cc66;
+			margin-right: 100px;
+			float: left;
+            cursor: pointer;
+            height: 465px;
+            background-image: url(深渊.jpg);
+            background-position: center top;
+            background-repeat: no-repeat;
+        }
+        #div1{
+            cursor: crosshair;
+			overflow: auto;/*超出的部分让浏览器自行解决*/
+		}
+		#div2{
+			overflow: visible;/*超出的部分会显示出来*/
+		}
+
+		#div3{
+			overflow: hidden;/*超出的部分将剪切掉*/
+		}
+
+        /* 导航栏 */
+        ul{
+			list-style: none;/*去掉列表前面的圆点*/
+			width: 420px;
+			height: 60px;
+			background-color: rgba(192, 93, 93, 0.74);/*设置整个导航栏的背景为灰色*/
+		}
+
+		li{
+			float: left;/*平铺*/
+			margin-right: 30px;
+			margin-top: 16px;
+		}
+
+		a{
+			text-decoration: none;/*去掉超链的下划线*/
+			font-size: 20px;
+			color: #BBBBBB;/*设置超链的字体为黑色*/
+			font-family:微软雅黑;
+		}
+
+        body{
+        /* background-image: url(深渊.jpg); */
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-color: rgb(140, 160, 95);
+        }
+    </style>
+
+        
+
+</head>
+
+<body background="body">
+    
+    
+
+    <div>其实很简单 其实很自然 两个人的爱由两人分担 其实并不难 是你太悲观 隔着一道墙不跟谁分享 不想让你为难 你不再需要给我个答案</div>
+	<div id="div2">其实很简单 其实很自然 两个人的爱由两人分担 其实并不难 是你太悲观 隔着一道墙不跟谁分享 不想让你为难 你不再需要给我个答案</div>
+    <div id="div3">其实很简单 其实很自然 两个人的爱由两人分担 其实并不难 是你太悲观 隔着一道墙不跟谁分享 不想让你为难 你不再需要给我个答案</div>
+
+    <!-- <br><table>
+		<tr>
+			<td>原始图片</td>
+			<td>图片加入黑白效果</td>
+		</tr>
+	<tr>
+        <td><img src="深渊.jpg"></td>
+        
+        
+		<td><img src="深渊.jpg" style="filter:gray()"></td> 
+	</tr>
+	</table> -->
+
+    <ul>
+		<li><a href="">博客园</a></li>
+		<li><a href="">新随笔</a></li>
+		<li><a href="">联系</a></li>
+		<li><a href="">订阅</a></li>
+		<li><a href="">管理</a></li>
+
+	</ul>
+</body>
+</html>
