@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my js demo</title>
+
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 行内式 -->
+    <input type="button" value="点我" onclick="alert('wyj')" />
+
+    <!-- 内嵌式 -->
+    <script type="text/javascript">
+        alert('wyj2号');
+        console.log('第二种方式');
+    </script>
+
+    <!-- 引入js文件 -->
+    <!-- <script src="test.js"></script> -->
+
+
+    <!-- 弹出输入框 -->
+    <script>
+        var a = prompt("请输入");
+        console.log(a);
+    </script>
+
+
+    <!-- 变量 -->
+    <script>
+        var a = "aa";
+        var b = a;
+        alert(b);
+        console.log(b.length);
+
+        var c = 12.3;
+        console.log(typeof c);
+    </script>
+
+    <!-- 循环 -->
+    <script>
+        for (var i = 0; i < 10; i++) {
+            console.log(i);
+        }
+    </script>
+
+    <!-- 对象 -->
+    <script>
+        var obj = new Object();
+        obj.sayName = function () {
+            console.log('say tik');
+        }
+        console.log(obj.sayName);  //没加括号，就是获取方法
+        console.log('-----------');
+        console.log(obj.sayName());  //加了括号，就是调用方法。即：执行函数内容，并执行函数体的内容
+    </script>
+
+    <!-- 对象属性值 -->
+    <script>
+        var obj = new Object();
+        obj.name = 'wyj';
+        console.log("name" in obj);
+        console.log(obj.name);
+    </script>
+
+    <!-- 遍历对象 -->
+    <script>
+        var obj = {
+            name: "wyj",
+            age: 12,
+            sex: "男"
+        };
+        for (var key in obj) {
+            console.log("属性名:" + key);
+            console.log("属性值:" + obj[key]); // 注意，因为这里的属性名 key 是变量，所以，如果想获取属性值，不能写成 obj.key，而是要写成 obj[key]
+        }
+    </script>
+
+
+    <!-- 绑定事件函数 -->
+    <div id="btn">我是按钮，请点击我</div>
+
+    <script>
+        var btn = document.getElementById('btn');
+        //2.绑定事件
+        btn.onclick = function () {
+            console.log('点击按钮后，要做的事情');
+        };
+    </script>
+
+
+    <!-- 事件 -->
+    <div id="box1">box1</div>
+
+    <script type="text/javascript">
+        // 1、获取事件源
+        var div = document.getElementById("box1");
+        // 2、绑定事件
+        div.onclick = function () {
+            // 3、书写事件驱动程序
+            alert("我是弹出的内容");
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        var div1 = document.getElementById("box1");
+        //点击鼠标时，原本粉色的div变大了，背景变红了
+        div1.onclick = function () {
+            div1.style.width = "200px";   //属性值要写引号
+            div1.style.height = "200px";
+            div1.style.backgroundColor = "red";   //属性名是backgroundColor，不是background-color
+        }
+    </script>
+
+
+
+    <script>
+        //window.onload页面加载完毕以后再执行此代码
+        window.onload = function () {
+            //需求：鼠标放到img上，更换为另一张图片，也就是修改路径（src的值）。
+            //步骤：
+            //1.获取事件源
+            //2.绑定事件
+            //3.书写事件驱动程序
+
+            //1.获取事件源
+            var img = document.getElementById("box");
+            //2.绑定事件(悬停事件：鼠标进入到事件源中，立即触发事件)
+            img.onmouseover = function () {
+                //3.书写事件驱动程序(修改src)
+                img.src = "../image/timg.jpg";
+            }
+
+            //2.鼠标移出去后变回原来的图
+            img.onmouseout = function () {
+                //3.书写事件驱动程序(修改src)
+                img.src = "../image/深渊.jpg";
+            }
+        }
+    </script>
+</body>
+<img id="box" src="../image/深渊.jpg" style="cursor: pointer;border: 1px solid #ccc;" />
+
+</html>
